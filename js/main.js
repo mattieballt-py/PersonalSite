@@ -1,4 +1,5 @@
 // main.js - simple utilities and small interactions
+// Custom fonts are applied via CSS. Any dynamic text inserted into header or body elements will inherit the correct font-family.
 document.addEventListener('DOMContentLoaded', function () {
   // set years across pages
   const years = document.querySelectorAll('#year,#year2,#year3,#year4,#year5');
