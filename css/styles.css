@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .brand-name, .section-title {
 }
   .hero-inner {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-start;
     gap: 48px;
@@ -134,11 +134,11 @@ h1, h2, h3, h4, h5, h6, .hero-title, .brand-name, .section-title {
     align-items: center;
   }
   .hero-media img {
-    width: 320px;
-    height: 220px;
+    width: 260px;
+    height: 520px;
     object-fit: cover;
     object-position: center;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 12px 32px rgba(11, 27, 43, 0.06);
   }
 .hero-title{margin:0;color:var(--text);}
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6, .hero-title, .brand-name, .section-title {
 
 /* responsive typographic scale */
 .hero-sub{margin-top:18px;color:var(--muted);max-width:520px;font-size:18px}
-      .hero-media img{width:320px;height:220px;border-radius:12px;}
+      .hero-media img{width:320px;height:420px;border-radius:12px;}
 
 /* ctas */
 .cta-row{display:flex;gap:12px;margin-top:22px}
@@ -212,3 +212,143 @@ h1, h2, h3, h4, h5, h6, .hero-title, .brand-name, .section-title {
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(11,27,43,0.08)}
 .hero-media img{transition:transform .7s ease}
 .hero-media img:hover{transform:scale(1.02)}
+
+
+
+.awards {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.awards__title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.awards__subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+
+.awards__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.awards__item {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(300px, 2fr) auto;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+}
+
+.awards__item:last-child {
+    border-bottom: none;
+}
+
+
+.awards__organization {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.awards__name {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.awards__year {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 500;
+    text-align: right;
+    min-width: 60px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .awards {
+        padding: 2rem 1rem;
+    }
+    
+    .awards__title {
+        font-size: 2rem;
+    }
+    
+    .awards__item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: left;
+        padding: 1rem 0;
+    }
+    
+    .awards__item--highlighted {
+        padding: 1rem;
+    }
+    
+    .awards__organization {
+        font-size: 0.9rem;
+        color: #666;
+        order: 1;
+    }
+    
+    .awards__name {
+        font-size: 1rem;
+        font-weight: 500;
+        order: 2;
+        margin-bottom: 0.25rem;
+    }
+    
+    .awards__year {
+        font-size: 0.9rem;
+        color: #666;
+        text-align: left;
+        order: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .awards {
+        padding: 1.5rem 1rem;
+    }
+    
+    .awards__title {
+        font-size: 1.75rem;
+    }
+    
+    .awards__subtitle {
+        font-size: 1rem;
+    }
+    
+    .awards__divider {
+        width: 40px;
+        margin-bottom: 2rem;
+    }
+    
+    .awards__list {
+        gap: 1rem;
+    }
+    
+    .awards__item {
+        padding: 0.75rem 0;
+    }
+    
+    .awards__item--highlighted {
+        padding: 0.75rem;
+    }
+}
