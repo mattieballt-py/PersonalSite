@@ -2,62 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Mattie Ball</title>
-  <meta name="description" content="About Mattie Ball — Mechanical engineer trained at Imperial College, designer and maker. Projects spanning F1 in Schools to product prototypes." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mattie Ball — Engineer | Designer | Maker</title>
+  <meta name="description" content="Mattie Ball — Mechanical engineer, designer, and maker. Portfolio of engineering projects, digital design, and editorial writing." />
+  <meta name="keywords" content="Mechanical Engineer, Designer, Maker, Portfolio, Engineering, Digital Design, Editorial Writing, Mattie Ball" />
+  <meta name="author" content="Mattie Ball" />
+  <link rel="canonical" href="https://mattieball.com/" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Mattie Ball — Engineer | Designer | Maker" />
+  <meta property="og:description" content="Mechanical engineer, designer, and maker. Portfolio of engineering projects, digital design, and editorial writing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mattieball.com/" />
+  <meta property="og:image" content="https://mattieball.com/assets/hero.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mattie Ball — Engineer | Designer | Maker" />
+  <meta name="twitter:description" content="Mechanical engineer, designer, and maker. Portfolio of engineering projects, digital design, and editorial writing." />
+  <meta name="twitter:image" content="https://mattieball.com/assets/hero.jpg" />
+  <meta name="twitter:site" content="@MattieBall" />
+
+  <!-- Google Fonts: Playfair Display (serif headline) + Inter (UI) -->
   <!-- Custom fonts are loaded via styles.css -->
+  <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mattie Ball",
+    "url": "https://mattieball.com",
+    "image": "https://mattieball.com/assets/hero.jpg",
+    "jobTitle": "Mechanical Engineer, Designer, Maker",
+    "sameAs": ["https://www.linkedin.com/in/mattieballt"]
+    }
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="wrap">
-      <div class="brand"><a href="index.html">MATTIE</a></div>
-      <nav class="nav" aria-label="Primary">
-        <ul>
-          <li><a href="about.html" class="active">About</a></li>
-          <li><a href="projects.html">Work</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <div class="wrap nav-flex">
+      <div class="brand">
+        <a href="index.html" aria-label="Mattie Ball home">
+          <div class="brand-name">MATTIE</div>
+        </a>
+      </div>
+      <div class="nav-icons">
+        <a href="https://fibonaccihq.com" target="_blank" rel="noopener" aria-label="Fibonacci HQ" class="icon-link" >
+            <img src="assets/fibsail_white.svg" id="fib-logo" alt="Fibonacci HQ" style="width:40px;height:auto;display:inline-block;vertical-align:middle;" />
+        </a>
+    <a href="ideas.html" aria-label="Ideas" class="icon-link">
+      <img src="assets/light-bulb.png" id="ideas-icon" alt="lightbulb icon" style="width:40px;height:auto;display:inline-block;vertical-align:middle;" />
+    </a>
+        <a href="https://www.linkedin.com/in/mattieballt" target="_blank" rel="noopener" aria-label="LinkedIn" class="icon-link">
+          <img src="assets/linkedin.svg" alt="LinkedIn" style="height:40px;width:auto;display:inline-block;-ms-text-combine-horizontal:middle;" />
+        </a>
+        
+      </div>
     </div>
   </header>
 
+
   <main class="wrap content">
     <article class="about">
-      <h1>About</h1>
-      <p>I was born in Sweden, raised in Edinburgh and studied Mechanical Engineering at Imperial College London. I combine prototyping, electronics and web design to ship meaningful products.</p>
-
-      <section>
-        <h2>Experience</h2>
-        <ul>
-          <li>Year at Red Bull Powertrains — product engineering exposure</li>
-          <li>F1 in Schools world finals — innovation & leadership</li>
-          <li>Freelance digital products and design for luxury brands</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Approach</h2>
-        <p>I believe in quick iterations, beautiful visuals and engineering rigour. I aim to build practical, repairable hardware and elegant digital experiences.</p>
-      </section>
-
-      <section>
-        <h2>Quick stats</h2>
-        <div class="stats-grid">
-          <div><strong>30+</strong><span>Projects built</span></div>
-          <div><strong>5</strong><span>International awards</span></div>
-          <div><strong>2000km</strong><span>Rowed this year</span></div>
-        </div>
-      </section>
-
-      <a href="contact.html" class="btn primary">Work with me</a>
+      <h1>Ideas</h1>
+      <p>Building in react to give upvote capabilities. Coming soon!</p>
     </article>
   </main>
 
   <footer class="site-footer wrap">
     <div class="muted small">© <span id="year2"></span> Mattie Ball</div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

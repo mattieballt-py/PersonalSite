@@ -340,7 +340,7 @@ body {
 .projects {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 0rem;
+    padding: 3rem 2rem;
 }
 
 /* Mobile-first design (matches your screenshot layout) */
@@ -463,12 +463,13 @@ body {
 /* Small mobile adjustments */
 @media (max-width: 480px) {
     .projects {
-        padding: 2rem 1rem;
+        padding: 3rem 2rem;
     }
     
     .projects__item {
         gap: 1rem;
         margin-bottom: 2.5rem;
+        padding: 3rem 2rem;
     }
     
     .projects__image-container {
