@@ -438,7 +438,6 @@ body {
     gap: 1.5rem;
     margin-bottom: 1rem;
     background-color: transparent;
-    align: wrap;
 }
 
 .projects__item:last-child {
