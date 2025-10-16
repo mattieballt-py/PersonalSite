@@ -861,7 +861,7 @@ body {
 .awards__list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0rem;
 }
 
 .awards__item {
@@ -965,7 +965,7 @@ body {
     }
     
     .awards__list {
-        gap: 1rem;
+        gap: 0rem;
     }
     
     .awards__item {
