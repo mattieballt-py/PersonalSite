@@ -425,10 +425,14 @@ body {
     color: #333;
 }
 
+.why {
+    padding: 5rem 1rem;
+}
+
 .projects {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
 }
 
 /* Mobile-first design (matches your screenshot layout) */
@@ -483,7 +487,7 @@ body {
 /* Desktop layout - horizontal grid */
 @media (min-width: 1024px) {
     .projects {
-        padding: 4rem 2rem;
+        padding: 1rem 2rem;
     }
     
     .projects {
@@ -528,7 +532,7 @@ body {
 /* Tablet adjustments - keep horizontal layout */
 @media (min-width: 769px) and (max-width: 1023px) {
     .projects {
-        padding: 2.5rem 2rem;
+        padding: 1.5rem 2rem;
     }
     
     .projects__item {
@@ -560,7 +564,7 @@ body {
 /* Mobile layout - stack vertically */
 @media (max-width: 768px) {
     .projects {
-        padding: 2rem 1rem;
+        padding: 1rem 1rem;
     }
     
     .projects__item {
@@ -855,6 +859,15 @@ body {
     color: #666;
     margin-bottom: 2rem;
     font-weight: 400;
+}
+
+/* small utility: italic text that inherits site typography */
+.italic {
+    font-style: italic;
+    font-family: 'Apfel Grotezk', 'Playfair Display', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #403f3f;
 }
 
 
