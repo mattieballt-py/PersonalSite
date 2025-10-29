@@ -89,10 +89,9 @@ h2 {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  padding: 0px 24px;
-  padding-left: 2rem;
+  padding: 0px 2rem;
 }
 
 .brand {
@@ -147,18 +146,17 @@ h2 {
 /* hero */
 .hero{
   padding:48px 0;
-  border-bottom:1px solid rgba(0,0,0,0.03);
 }
   .hero-inner {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-around;
     align-items: center;
-    justify-content: flex-start;
-    gap: 48px;
+    gap: 32px;
+    flex-direction: row-reverse;
   }
   .hero-left {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 0 0 auto;
+    width: auto;  min-width: 0;
   }
   .hero-media {
     flex: 0 0 auto;
@@ -174,7 +172,7 @@ h2 {
     object-fit: cover;
     object-position: center;
     border-radius: 4px;
-    box-shadow: 0 12px 32px rgba(11, 27, 43, 0.06);
+    margin-right: auto;
   }
 .hero-title{margin:0;color:var(--text);margin-bottom:18px;}
 .hero-title .loose{display:block;font-size:72px;letter-spacing:26px;line-height:0.9}
