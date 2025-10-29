@@ -1,92 +1,8 @@
-/* Timeline Section Styles */
-.timeline-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 3rem 0 2rem 0;
-}
-.timeline-title {
-    font-size: 36px;
-    font-family: 'Bonbance Bold Condensed', 'Playfair Display', serif;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.timeline {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-}
-.timeline:before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    z-index: 0;
-}
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 1.5rem 2rem;
-    box-sizing: border-box;
-}
-.timeline-item.left {
-    left: 0;
-    text-align: right;
-}
-.timeline-item.right {
-    left: 50%;
-    text-align: left;
-}
-.timeline-content {
-    border-radius: 10px;
-    box-shadow: 0 4px 18px rgba(11,27,43,0.06);
-    padding: 1.25rem 1.5rem;
-    display: inline-block;
-    max-width: 340px;
-}
-.timeline-content h3 {
-    font-size: 22px;
-    font-family: 'Bonbance Bold Condensed', 'Playfair Display', serif;
-    font-weight: bold;
-    margin: 0 0 0.5rem 0;
-}
-.timeline-content p {
-    font-size: 18px;
-    font-family: 'Apfel Grotezk', 'Playfair Display', Arial, Helvetica, sans-serif;
-    margin: 0;
-}
-@media (max-width: 900px) {
-    .timeline-section {
-        padding: 2rem 0 1rem 0;
-    }
-    .timeline-content {
-        max-width: 100%;
-        padding: 1rem;
-    }
-}
-@media (max-width: 700px) {
-    .timeline {
-        padding: 0;
-    }
-    .timeline:before {
-        left: 8px;
-        transform: none;
-    }
-    .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        text-align: left !important;
-        padding: 1rem 0 1rem 24px;
-    }
-}
+
+
 /* What I'm Working On lead spacing */
 .working-on-lead {
-    margin-bottom: 0.5rem;
-    padding-bottom: 0;
+    padding: 0;
 }
 /* Remove underlining and set link color globally */
 a, a:visited, a:active, a:hover {
@@ -162,9 +78,10 @@ h2 {
 }
 
 .wrap{
-  width:90%;
-  max-width:var(--max-width);
-  margin:0 auto;
+  width: fill-available;
+  max-width: var(--max-width);
+  margin: 0 2rem;
+  padding: 2rem 0;
 }
 
 .nav-flex {
@@ -174,7 +91,8 @@ h2 {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0px 24px;
+  padding-left: 2rem;
 }
 
 .brand {
@@ -280,7 +198,7 @@ h2 {
 .btn.ghost{background:transparent;border:1px solid #e7e7e7;color:var(--text)}
 
 /* projects grid */
-.section{padding:22px 0}
+.section{padding:2rem 0}
 .section-title{font-size:28px;margin:0 0 8px}
 .section-lead{color:var(--muted);margin-bottom:24px}
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:18px}
@@ -426,13 +344,12 @@ body {
 }
 
 .why {
-    padding: 5rem 1rem;
+    padding: 5rem 0rem;
 }
 
 .projects {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    margin: 0 2rem;
 }
 
 /* Mobile-first design (matches your screenshot layout) */
@@ -486,10 +403,7 @@ body {
 
 /* Desktop layout - horizontal grid */
 @media (min-width: 1024px) {
-    .projects {
-        padding: 1rem 2rem;
-    }
-    
+   
     .projects {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -531,9 +445,6 @@ body {
 
 /* Tablet adjustments - keep horizontal layout */
 @media (min-width: 769px) and (max-width: 1023px) {
-    .projects {
-        padding: 1.5rem 2rem;
-    }
     
     .projects__item {
         flex-direction: row;
@@ -563,9 +474,7 @@ body {
 
 /* Mobile layout - stack vertically */
 @media (max-width: 768px) {
-    .projects {
-        padding: 1rem 1rem;
-    }
+
     
     .projects__item {
         flex-direction: column;
@@ -601,9 +510,7 @@ body {
 
 /* Small mobile adjustments */
 @media (max-width: 480px) {
-    .projects {
-        padding: 1.5rem 1rem;
-    }
+
     
     .projects__item {
         gap: 0.4rem;
@@ -843,8 +750,8 @@ body {
 /* Awards Section */
 .awards {
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
+    margin: 0 2rem;
+    padding: 1rem 0rem;
 }
 
 .awards__title {
@@ -917,7 +824,8 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .awards {
-        padding: 1rem 1rem;
+        padding: 1rem 0rem;
+        margin: 0 2rem;
     }
     
     .awards__title {
@@ -961,7 +869,8 @@ body {
 
 @media (max-width: 480px) {
     .awards {
-        padding: 1rem 1rem;
+        padding: 1rem 0rem;
+        margin: 0 2rem;
     }
     
     .awards__title {
