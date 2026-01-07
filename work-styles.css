@@ -1,0 +1,638 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0D1B47;
+    --navy-dark: #0a1435;
+    --cream: #f5f1ea;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #666;
+}
+
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Skip Link */
+.skip {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip:focus {
+    left: 0;
+    top: 0;
+    background: var(--navy);
+    color: white;
+    padding: 1rem;
+    z-index: 200;
+}
+
+/* Container */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.site-header {
+    background: var(--white);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.icon-link {
+    transition: opacity 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-link:hover {
+    opacity: 0.6;
+}
+
+/* Back to Home Link */
+.back-home {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.back-home:hover {
+    color: var(--text-dark);
+}
+
+/* Selected Work Section */
+.selected-work-section {
+    background: var(--white);
+    padding: 4rem 0 2rem;
+}
+
+.selected-work-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 4rem;
+}
+
+.selected-work-text h1 {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.selected-work-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 500px;
+}
+
+.selected-work-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.selected-work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Project Items (Fibonacci, Mini Hydration, etc) */
+.project-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+}
+
+.project-text .subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-images {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    height: 300px;
+}
+
+/* Overlapping images for Fibonacci section */
+.project-images.overlapping {
+    gap: 0;
+}
+
+.project-images.overlapping .project-image-wrapper:nth-child(1) {
+    position: absolute;
+    top: 0;
+    right: 180px;
+    z-index: 2;
+}
+
+.project-images.overlapping .project-image-wrapper:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 1;
+}
+
+.project-image-wrapper {
+    width: 220px;
+    height: 180px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Single image projects */
+.project-images.single {
+    justify-content: flex-end;
+    height: auto;
+}
+
+.project-images.single .project-image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 200px;
+}
+
+/* Awards Section */
+.awards-section {
+    background: var(--cream);
+    padding: 5rem 2rem;
+    margin-top: 3rem;
+}
+
+.awards-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.awards-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.awards-content .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.awards-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+.awards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.award-item {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr 0.75fr;
+    gap: 3rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    align-items: start;
+}
+
+.award-item:last-child {
+    border-bottom: none;
+}
+
+.award-org {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    font-weight: 400;
+}
+
+.award-name {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.award-year {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+/* Gradient Transition */
+.gradient-section {
+    height: 200px;
+    background: linear-gradient(180deg, var(--cream) 0%, #F2C9A8 30%, #1F43AD 70%, var(--navy) 100%);
+}
+
+/* Current Work Section */
+.current-work-section {
+    background: var(--navy);
+    padding: 5rem 2rem;
+}
+
+.current-work-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.current-work-text {
+    color: var(--white);
+}
+
+.current-work-text h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.current-work-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 550px;
+}
+
+.current-work-images {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: start;
+}
+
+.current-work-image {
+    width: 140px;
+    height: 180px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.current-work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mission Footer Section */
+.mission-footer-section {
+    background: var(--navy);
+    padding: 4rem 2rem 3rem;
+    border-top: 2px dashed rgba(255, 255, 255, 0.25);
+}
+
+.mission-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.mission-text {
+    color: var(--white);
+}
+
+.mission-text h2 {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.mission-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    max-width: 550px;
+}
+
+.footer-rhs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+    gap: 0.5rem;
+}
+
+/* Site Footer */
+.site-footer {
+    background: var(--navy-dark);
+    padding: 3rem 2rem;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.site-footer strong {
+    color: var(--white);
+    font-size: 1.125rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.muted {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+.socials {
+    margin-top: 1rem;
+}
+
+.socials a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: var(--white);
+}
+
+/* Hero, Projects Grid, Editorial - keeping existing HTML but hidden by default */
+.hero,
+.projects,
+.section,
+.projects-grid,
+main.wrap.content {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .selected-work-text h1,
+    .current-work-text h2,
+    .mission-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .project-text h2 {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrap,
+    .project-item,
+    .awards-section,
+    .current-work-section,
+    .mission-footer-section,
+    .site-footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .selected-work-header {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .selected-work-image {
+        width: 150px;
+        height: 150px;
+        justify-self: center;
+    }
+
+    .selected-work-text h1 {
+        font-size: 2.25rem;
+    }
+
+    .selected-work-text p {
+        max-width: 100%;
+    }
+
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .project-text h2 {
+        font-size: 2rem;
+    }
+
+    .project-images {
+        justify-content: center;
+        height: 250px;
+    }
+
+    .project-images.overlapping .project-image-wrapper:nth-child(1) {
+        right: 150px;
+    }
+
+    .project-images.overlapping .project-image-wrapper:nth-child(2) {
+        top: 50px;
+    }
+
+    .project-image-wrapper {
+        width: 180px;
+        height: 150px;
+    }
+
+    .project-images.single .project-image-wrapper {
+        width: 240px;
+        height: 180px;
+    }
+
+
+    .award-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .award-year {
+        text-align: left;
+    }
+
+    .current-work-content,
+    .mission-footer-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .current-work-images {
+        justify-content: center;
+        order: -1;
+    }
+
+    .current-work-text h2,
+    .mission-text h2 {
+        font-size: 2.25rem;
+    }
+
+    .current-work-text p,
+    .mission-text p {
+        max-width: 100%;
+    }
+
+    .footer-rhs {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .nav-icons img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .wrap,
+    .project-item,
+    .awards-section,
+    .current-work-section,
+    .mission-footer-section,
+    .site-footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .selected-work-text h1 {
+        font-size: 1.875rem;
+    }
+
+    .project-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .project-images {
+        height: 200px;
+    }
+
+    .project-images.overlapping .project-image-wrapper:nth-child(1) {
+        right: 110px;
+    }
+
+    .project-image-wrapper {
+        width: 150px;
+        height: 130px;
+    }
+
+    .project-images.single .project-image-wrapper {
+        width: 200px;
+        height: 160px;
+    }
+
+    .current-work-text h2,
+    .mission-text h2 {
+        font-size: 1.875rem;
+    }
+
+    .current-work-images {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .current-work-image {
+        width: 120px;
+        height: 150px;
+    }
+
+    .gradient-section {
+        height: 150px;
+    }
+}
