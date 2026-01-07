@@ -59,7 +59,7 @@ Pursuing my interests, but also where I can make an impact.</p>
       </div>
     </section>
     <!-- Fibonacci Project -->
-    <section class="project-item-section">
+    <section class="project-item-section fibonacci-section">
       <div class="project-item fibonacci-project">
         <div class="project-text">
           <h2>Fibonacci (2018-2022)</h2>
@@ -67,44 +67,57 @@ Pursuing my interests, but also where I can make an impact.</p>
         </div>
         <div class="fibonacci-media-container">
           <div class="fibonacci-static-media">
-            <div class="fibonacci-image-wrapper">
-              <img src="images/Design.png" alt="Fibonacci Design" />
+            <div class="fibonacci-pdf-wrapper">
+              <a href="images/Fibonacci Brand Guide PRINT.pdf" download class="pdf-preview">
+                <embed src="images/Fibonacci Brand Guide PRINT.pdf#page=1" type="application/pdf" />
+                <div class="pdf-overlay">
+                  <span>Brand Guide PDF</span>
+                  <span>click to download</span>
+                </div>
+              </a>
             </div>
             <div class="fibonacci-pdf-wrapper">
               <a href="images/Enterprise Worlds print.pdf" download class="pdf-preview">
                 <embed src="images/Enterprise Worlds print.pdf#page=1" type="application/pdf" />
                 <div class="pdf-overlay">
-                  <span>Click to download PDF</span>
+                  <span>Enterprise Worlds PDF</span>
+                  <span>click to download</span>
                 </div>
               </a>
             </div>
           </div>
           <button class="plus-button" id="fibonacci-plus-btn" aria-label="Toggle video gallery">+</button>
-          <div class="fibonacci-video-gallery" id="fibonacci-video-gallery">
-            <video class="fibonacci-video" loop muted playsinline>
-              <source src="images/U-mask animation sea of blocks final! (attempt 16) (1) (yafw small_file).mp4" type="video/mp4">
-            </video>
-            <video class="fibonacci-video" loop muted playsinline>
-              <source src="images/easy composites animation (1) (yafw small_file).mov" type="video/mp4">
-            </video>
-            <video class="fibonacci-video" loop muted playsinline>
-              <source src="images/paul roggers forcefield animation 10001-0565 (yafw very_small_file).mp4" type="video/mp4">
-            </video>
-          </div>
+        </div>
+      </div>
+      <!-- Fibonacci Video Overlay -->
+      <div class="fibonacci-video-overlay" id="fibonacci-video-overlay">
+        <div class="fibonacci-video-gallery" id="fibonacci-video-gallery">
+          <video class="fibonacci-video" loop muted playsinline>
+            <source src="images/U-mask animation sea of blocks final! (attempt 16) (1) (yafw small_file).mp4" type="video/mp4">
+          </video>
+          <video class="fibonacci-video" loop muted playsinline>
+            <source src="images/easy composites animation (1) (yafw small_file).mov" type="video/mp4">
+          </video>
+          <video class="fibonacci-video" loop muted playsinline>
+            <source src="images/paul roggers forcefield animation 10001-0565 (yafw very_small_file).mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
 
-    <!-- Mini Hydration Project -->
+    <!-- Digital Scanning Project -->
     <section class="project-item-section">
       <div class="project-item">
         <div class="project-text">
-          <h2>Mimi Hydration</h2>
-          <p>3 month contract to engineer an automated device tester</p>
+          <h2>Digital Scanning</h2>
+          <p>3D Models of assets (rental cars, flats, chartered yachts) for remote damage inspection</p>
         </div>
         <div class="project-images single">
-          <div class="project-image-wrapper">
-            <img src="assets/transmission.jpg" alt="Mini Hydration" />
+          <div class="project-image-wrapper digital-scanning-image">
+            <img src="images/gaussiansplat.jpeg" alt="Gaussian Splat" />
+            <div class="image-hover-overlay">
+              <span>gathering interest</span>
+            </div>
           </div>
         </div>
       </div>
@@ -237,16 +250,32 @@ Pursuing my interests, but also where I can make an impact.</p>
   <script>
     // Fibonacci video gallery toggle
     const plusBtn = document.getElementById('fibonacci-plus-btn');
+    const videoOverlay = document.getElementById('fibonacci-video-overlay');
     const videoGallery = document.getElementById('fibonacci-video-gallery');
     const videos = document.querySelectorAll('.fibonacci-video');
     let galleryOpen = false;
 
     plusBtn.addEventListener('click', () => {
       galleryOpen = !galleryOpen;
+      videoOverlay.classList.toggle('active', galleryOpen);
       videoGallery.classList.toggle('active', galleryOpen);
       plusBtn.classList.toggle('active', galleryOpen);
 
       if (!galleryOpen) {
+        videos.forEach(video => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+    });
+
+    // Close overlay when clicking outside videos
+    videoOverlay.addEventListener('click', (e) => {
+      if (e.target === videoOverlay) {
+        galleryOpen = false;
+        videoOverlay.classList.remove('active');
+        videoGallery.classList.remove('active');
+        plusBtn.classList.remove('active');
         videos.forEach(video => {
           video.pause();
           video.currentTime = 0;
