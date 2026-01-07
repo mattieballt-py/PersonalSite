@@ -73,3 +73,25 @@ function showToast(message, isError = false) {
     }, 2500);
 }
 
+// Video hover play/pause
+const videoContainer = document.querySelector('.video-container');
+const video = document.querySelector('.video-container video');
+
+if (videoContainer && video) {
+    videoContainer.addEventListener('mouseenter', function() {
+        video.play();
+    });
+
+    videoContainer.addEventListener('mouseleave', function() {
+        video.pause();
+    });
+}
+
+// Fibonacci HQ button
+const fibhqButton = document.getElementById('fibhq-button');
+if (fibhqButton) {
+    fibhqButton.addEventListener('click', function() {
+        window.open('https://www.fibonaccihq.com/insights', '_blank');
+    });
+}
+
