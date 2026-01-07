@@ -31,7 +31,7 @@
     "@type": "Person",
     "name": "Mattie Ball",
     "url": "https://mattieball.com",
-    "image": "https://mattieball.com/assets/hero.jpg",
+    "image": "https://mattieball.com/images/hero.jpg",
     "jobTitle": "Mechanical Engineer, Designer, Maker",
     "sameAs": ["https://www.linkedin.com/in/mattieballt"]
     }
@@ -48,7 +48,9 @@
         <div class="selected-work-header">
           <div class="selected-work-text">
             <h1>Selected Work</h1>
-            <p>A selection of projects that I love working on. I make things that make people's lives better, and enjoy constantly learning new things along the way.</p>
+            <p>I work on projects in an effort to make a tangible difference to the world.
+Pursuing my interests, but also where I can make an impact.</p>
+            <a href="#current-work" class="btn-current-work" id="current-work-button">Currently working on<span class="link-arrow">→</span></a>
           </div>
           <div class="selected-work-image">
             <img src="images/mattie_podium.png" alt="Mattie Ball" />
@@ -58,17 +60,36 @@
     </section>
     <!-- Fibonacci Project -->
     <section class="project-item-section">
-      <div class="project-item">
+      <div class="project-item fibonacci-project">
         <div class="project-text">
-          <h2>Fibonacci</h2>
-          <p class="subtitle">FIBHQ.COM</p>
+          <h2>Fibonacci (2018-2022)</h2>
+          <p>Marketing using engineering globally</p>
         </div>
-        <div class="project-images overlapping">
-          <div class="project-image-wrapper">
-            <img src="assets/fibhqwebsite.png" alt="Fibonacci HQ website" />
+        <div class="fibonacci-media-container">
+          <div class="fibonacci-static-media">
+            <div class="fibonacci-image-wrapper">
+              <img src="images/Design.png" alt="Fibonacci Design" />
+            </div>
+            <div class="fibonacci-pdf-wrapper">
+              <a href="images/Enterprise Worlds print.pdf" download class="pdf-preview">
+                <embed src="images/Enterprise Worlds print.pdf#page=1" type="application/pdf" />
+                <div class="pdf-overlay">
+                  <span>Click to download PDF</span>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="project-image-wrapper">
-            <img src="assets/hero.png" alt="Fibonacci work" />
+          <button class="plus-button" id="fibonacci-plus-btn" aria-label="Toggle video gallery">+</button>
+          <div class="fibonacci-video-gallery" id="fibonacci-video-gallery">
+            <video class="fibonacci-video" loop muted playsinline>
+              <source src="images/U-mask animation sea of blocks final! (attempt 16) (1) (yafw small_file).mp4" type="video/mp4">
+            </video>
+            <video class="fibonacci-video" loop muted playsinline>
+              <source src="images/easy composites animation (1) (yafw small_file).mov" type="video/mp4">
+            </video>
+            <video class="fibonacci-video" loop muted playsinline>
+              <source src="images/paul roggers forcefield animation 10001-0565 (yafw very_small_file).mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -78,8 +99,8 @@
     <section class="project-item-section">
       <div class="project-item">
         <div class="project-text">
-          <h2>Mini Hydration</h2>
-          <p class="subtitle">MINIHYDR.COM</p>
+          <h2>Mimi Hydration</h2>
+          <p>3 month contract to engineer an automated device tester</p>
         </div>
         <div class="project-images single">
           <div class="project-image-wrapper">
@@ -97,18 +118,23 @@
         <div class="awards-divider"></div>
         <div class="awards-list">
           <div class="award-item">
-            <div class="award-org">Imperial</div>
+            <div class="award-org">Google</div>
+            <div class="award-name">ADC Hackathon 1st Place</div>
+            <div class="award-year">2026</div>
+          </div>
+          <div class="award-item">
+            <div class="award-org">Imperial College London</div>
             <div class="award-name">Neil Watson Memorial Prize</div>
             <div class="award-year">2025</div>
           </div>
           <div class="award-item">
-            <div class="award-org">Entrepreneur First</div>
+            <div class="award-org">Entrepreneurs First</div>
             <div class="award-name">European Builders League Hackathon Winner</div>
             <div class="award-year">2025</div>
           </div>
           <div class="award-item">
             <div class="award-org">Royal Academy of Engineering</div>
-            <div class="award-name">Engineers Leaders Scholarship</div>
+            <div class="award-name">Engineering Leaders Scholarship</div>
             <div class="award-year">2024</div>
           </div>
           <div class="award-item">
@@ -117,19 +143,14 @@
             <div class="award-year">2024</div>
           </div>
           <div class="award-item">
-            <div class="award-org">Imperial College London</div>
-            <div class="award-name">Ideas Challenge 1st Place</div>
-            <div class="award-year">2024</div>
-          </div>
-          <div class="award-item">
-            <div class="award-org">F1 in Schools</div>
-            <div class="award-name">Red Bull Racing Award</div>
-            <div class="award-year">2022</div>
-          </div>
-          <div class="award-item">
             <div class="award-org">University College London (UCL)</div>
             <div class="award-name">Full Four Year Engineering Scholarship</div>
             <div class="award-year">2022</div>
+          </div>
+          <div class="award-item">
+            <div class="award-org"><a href="https://ukmt.org.uk/" target="blank"> UK Maths Trust (UKMT) </a></div>
+            <div class="award-name">Gold Award Yearly Maths Olympiad</div>
+            <div class="award-year">2016-2022</div>
           </div>
         </div>
       </div>
@@ -139,61 +160,28 @@
     <div class="gradient-section"></div>
 
     <!-- Current Work Section -->
-    <section class="current-work-section">
+    <section class="current-work-section" id="current-work">
       <div class="current-work-content">
-        <div class="current-work-text">
-          <h2>Current Work</h2>
-          <p>I'm currently researching autonomous underwater vehicles and building a robotic sea turtle at Imperial College London. Meanwhile, at Fibonacci HQ, I'm creating digital experiences that inspire more people to get out on the water.</p>
-        </div>
-        <div class="current-work-images">
-          <div class="current-work-image">
-            <img src="assets/hero.png" alt="Current work 1" />
+        <h2>Current Work</h2>
+        <div class="current-work-items">
+          <div class="current-work-item hover-item">
+            <p class="item-text">Website design for yachting brands</p>
+            <a href="https://fibonaccihq.com" target="_blank" class="item-image">
+              <img src="images/fibonaccimockup.jpg" alt="Fibonacci HQ" />
+            </a>
           </div>
-          <div class="current-work-image">
-            <img src="assets/hero.png" alt="Current work 2" />
+          <div class="current-work-item hover-item">
+            <p class="item-text">Hackathon Q organising events across Europe</p>
+            <a href="https://hackathonq.com" target="_blank" class="item-image">
+              <img src="images/hackathonq.jpg" alt="Hackathon Q" />
+            </a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects">
-      <div class="projects__item">
-        <div class="projects__image-container">
-          <a href="https://fibonaccihq.com" target="_blank" rel="noopener">
-            <img src="assets/fibhqwebsite.png" alt="Fibonacci HQ website displayed on laptop" class="projects__image">
-          </a>
-        </div>
-        <div class="projects__content">
-          <a href="https://fibonaccihq.com" target="_blank" rel="noopener">
-            <h3 class="projects__title">Fibonacci HQ</h3>
-          </a>
-          <p class="projects__description">
-            A design firm for creating complete digital presence's in the luxury yacht charter niche. I connect all functionality clients need, and optimise for searchability and user conversion.
-          </p>
-        </div>
-      </div>
-      <div class="projects__item">
-        <div class="projects__image-container">
-          <img src="assets/hqdirectors.PNG" alt="Two people at hackathon event" class="projects__image">
-        </div>
-        <div class="projects__content">
-          <a href="https://hackathonq.com" target="_blank" rel="noopener">
-            <h3 class="projects__title">Hackathon Q</h3>
-          </a>
-          <p class="projects__description">
-            Yet to be released, but in the works: Co-founding an organisation to create hackthon events. On a mission to support the first solo billion dollar company, and doing it here in Europe.
-          </p>
-        </div>
-      </div>
-      <div class="projects__item">
-        <div class="projects__image-container">
-          <img src="assets/transmission.jpg" alt="3D CAD model of mechanical engineering design" class="projects__image">
-        </div>
-        <div class="projects__content">
-          <h3 class="projects__title">Engineering</h3>
-          <p class="projects__description">
-            MEng Mechanical Engineering, Imperial College London. Currently researching Autonomous Underwater Vehicle control methods, and building an AUV Robotic Turtle.
-          </p>  
+          <div class="current-work-item hover-item">
+            <p class="item-text">Robotic Sea Turtle engineering project</p>
+            <div class="item-image-no-link">
+              <img src="images/turtle.jpg" alt="Robotic Sea Turtle" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -209,7 +197,7 @@
                             I’m on a mission to build brilliant tools and products, and help  a billion people. 
                             Lets stay in touch.
                         </p>
-                        <button class="btn-work" id="fibhq-button" href="https://www.fibonaccihq.com/insights">Fibonacci HQ Insights Articles <span class="link-arrow">→</span></button>
+                        <button class="btn-work btn-work-light" id="fibhq-button" href="https://www.fibonaccihq.com/insights">Fibonacci HQ Insights Articles <span class="link-arrow">→</span></button>
                     </div>
                     <div class="footer-rhs">
                         <p> built with care </p>
@@ -245,7 +233,51 @@
         </div>
     </footer>
   </main>
- 
 
+  <script>
+    // Fibonacci video gallery toggle
+    const plusBtn = document.getElementById('fibonacci-plus-btn');
+    const videoGallery = document.getElementById('fibonacci-video-gallery');
+    const videos = document.querySelectorAll('.fibonacci-video');
+    let galleryOpen = false;
+
+    plusBtn.addEventListener('click', () => {
+      galleryOpen = !galleryOpen;
+      videoGallery.classList.toggle('active', galleryOpen);
+      plusBtn.classList.toggle('active', galleryOpen);
+
+      if (!galleryOpen) {
+        videos.forEach(video => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+    });
+
+    // Video hover effects
+    videos.forEach(video => {
+      video.addEventListener('mouseenter', () => {
+        if (galleryOpen) {
+          video.play();
+        }
+      });
+
+      video.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+
+    // Smooth scroll for "Currently working on" button
+    document.getElementById('current-work-button')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('current-work')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Fibonacci HQ button redirect
+    document.getElementById('fibhq-button')?.addEventListener('click', () => {
+      window.open('https://www.fibonaccihq.com/insights', '_blank');
+    });
+  </script>
 </body>
 </html>

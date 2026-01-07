@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 :root {
     --navy: #0D1B47;
     --navy-dark: #0a1435;
@@ -16,7 +21,7 @@
 body {
     font-family: 'Instrument Sans', sans-serif;
     color: var(--text-dark);
-    background-color: var(--white);
+    background-color: var(--cream);
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -29,6 +34,12 @@ h1, h2, h3 {
 
 .italic {
     font-style: italic;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 /* Skip Link */
@@ -55,7 +66,7 @@ h1, h2, h3 {
 
 /* Header */
 .site-header {
-    background: var(--white);
+    background: var(--cream);
     padding: 1.5rem 0;
     position: sticky;
     top: 0;
@@ -79,7 +90,6 @@ h1, h2, h3 {
 }
 
 .brand a {
-    text-decoration: none;
     color: inherit;
 }
 
@@ -102,67 +112,87 @@ h1, h2, h3 {
 /* Back to Home Link */
 .back-home {
     font-size: 0.875rem;
-    color: var(--text-muted);
-    text-decoration: none;
+    color: inherit;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    margin-bottom: 2rem;
-    transition: color 0.3s ease;
+    margin-bottom: 0;
 }
 
 .back-home:hover {
-    color: var(--text-dark);
+    color: inherit;
 }
 
 /* Selected Work Section */
 .selected-work-section {
-    background: var(--white);
-    padding: 4rem 0 2rem;
+    background: var(--cream);
+    padding: 4rem 0;
+    min-height: 98vh;
+    display: flex;
+    align-items: center;
 }
 
 .selected-work-header {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
-    align-items: start;
-    margin-bottom: 4rem;
+    align-items: center;
+    margin-bottom: 0;
 }
 
 .selected-work-text h1 {
-    font-size: 2.75rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
     font-weight: 400;
 }
 
 .selected-work-text p {
-    font-size: 0.95rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-muted);
     max-width: 500px;
+    margin-bottom: 2rem;
 }
 
 .selected-work-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .selected-work-image img {
     width: 100%;
-    height: 100%;
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #8b7355 0%, #6b5d52 100%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
     object-fit: cover;
 }
 
+.selected-work-image img:hover {
+    transform: translateY(-4px);
+}
+
 /* Project Items (Fibonacci, Mini Hydration, etc) */
+.project-item-section {
+    background: var(--cream);
+    padding: 4rem 0;
+    min-height: 98vh;
+    display: flex;
+    align-items: center;
+}
+
 .project-item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 0;
     padding: 0 2rem;
     max-width: 1200px;
     margin-left: auto;
@@ -303,60 +333,82 @@ h1, h2, h3 {
 /* Gradient Transition */
 .gradient-section {
     height: 200px;
-    background: linear-gradient(180deg, var(--cream) 0%, #F2C9A8 30%, #1F43AD 70%, var(--navy) 100%);
+    background: linear-gradient(180deg, #f5f1ea 0%, #F2C9A8 30%, #1F43AD 70%, var(--navy) 100%);
 }
 
 /* Current Work Section */
 .current-work-section {
     background: var(--navy);
     padding: 5rem 2rem;
+    min-height: 0.5vh;
 }
 
 .current-work-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 4rem;
-    align-items: start;
 }
 
-.current-work-text {
+.current-work-content h2 {
+    font-size: 2.75rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
     color: var(--white);
 }
 
-.current-work-text h2 {
-    font-size: 2.75rem;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
+.current-work-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.current-work-text p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(255, 255, 255, 0.85);
-    max-width: 550px;
-}
-
-.current-work-images {
+.current-work-item {
+    position: relative;
+    min-height: 200px;
     display: flex;
-    gap: 1.5rem;
-    justify-content: flex-end;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
 }
 
-.current-work-image {
-    width: 140px;
-    height: 180px;
-    border-radius: 0.75rem;
+.current-work-item .item-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    transition: opacity 0.3s ease;
+}
+
+.current-work-item .item-image,
+.current-work-item .item-image-no-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
-.current-work-image img {
+.current-work-item .item-image img,
+.current-work-item .item-image-no-link img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.current-work-item.hover-item:hover .item-text {
+    opacity: 0;
+}
+
+.current-work-item.hover-item:hover .item-image,
+.current-work-item.hover-item:hover .item-image-no-link {
+    opacity: 1;
 }
 
 /* Mission Footer Section */
@@ -438,28 +490,94 @@ h1, h2, h3 {
 }
 
 .socials a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: inherit;
 }
 
 .socials a:hover {
-    color: var(--white);
+    color: inherit;
 }
 
 /* Hero, Projects Grid, Editorial - keeping existing HTML but hidden by default */
 .hero,
-.projects,
 .section,
 .projects-grid,
 main.wrap.content {
     display: none;
 }
 
+.project-item{
+    height: 100vh;
+}
+
+/* Projects Section (bottom of work page) */
+.projects {
+    background: var(--navy);
+    padding: 5rem 2rem;
+}
+
+.projects__item {
+    max-width: 1200px;
+    margin: 0 auto 5rem auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.projects__item:last-child {
+    margin-bottom: 0;
+}
+
+.projects__image-container {
+    width: 100%;
+}
+
+.projects__image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.projects__image:hover {
+    transform: translateY(-4px);
+}
+
+.projects__content {
+    color: var(--white);
+}
+
+.projects__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.projects__title a {
+    color: inherit;
+}
+
+.projects__title a:hover {
+    color: inherit;
+}
+
+.projects__description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 550px;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .selected-work-text h1,
-    .current-work-text h2,
+    .current-work-content h2,
     .mission-text h2 {
         font-size: 2.5rem;
     }
@@ -470,6 +588,10 @@ main.wrap.content {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
     .wrap,
     .project-item,
     .awards-section,
@@ -480,26 +602,48 @@ main.wrap.content {
         padding-right: 1.25rem;
     }
 
+    .selected-work-section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+
     .selected-work-header {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
     .selected-work-image {
-        width: 150px;
-        height: 150px;
-        justify-self: center;
+        order: -1;
+        justify-content: center;
+    }
+
+    .selected-work-image img {
+        max-width: 240px;
     }
 
     .selected-work-text h1 {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .selected-work-text p {
+        font-size: 0.9375rem;
+        margin-bottom: 1.5rem;
         max-width: 100%;
     }
 
+    .project-item-section {
+        padding: 3rem 0;
+        min-height: auto;
+    }
+
     .project-item {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        margin-bottom: 0;
+    }
+
+    .projects__item {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         margin-bottom: 4rem;
@@ -543,23 +687,22 @@ main.wrap.content {
         text-align: left;
     }
 
-    .current-work-content,
+    .current-work-items {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .current-work-content h2,
+    .mission-text h2 {
+        font-size: 2.25rem;
+    }
+
     .mission-footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 
-    .current-work-images {
-        justify-content: center;
-        order: -1;
-    }
-
-    .current-work-text h2,
-    .mission-text h2 {
-        font-size: 2.25rem;
-    }
-
-    .current-work-text p,
     .mission-text p {
         max-width: 100%;
     }
@@ -578,9 +721,37 @@ main.wrap.content {
         width: 32px !important;
         height: 32px !important;
     }
+
+    .footer {
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .container-mission {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mission-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .footer-rhs {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
     .wrap,
     .project-item,
     .awards-section,
@@ -591,8 +762,25 @@ main.wrap.content {
         padding-right: 1rem;
     }
 
+    .selected-work-section {
+        padding: 2rem 0;
+    }
+
     .selected-work-text h1 {
-        font-size: 1.875rem;
+        font-size: 2rem;
+    }
+
+    .selected-work-text p {
+        font-size: 0.875rem;
+        max-width: 100%;
+    }
+
+    .selected-work-image img {
+        max-width: 200px;
+    }
+
+    .project-item-section {
+        padding: 2rem 0;
     }
 
     .project-text h2 {
@@ -617,22 +805,427 @@ main.wrap.content {
         height: 160px;
     }
 
-    .current-work-text h2,
+    .current-work-content h2,
     .mission-text h2 {
         font-size: 1.875rem;
     }
 
-    .current-work-images {
-        flex-direction: row;
-        gap: 1rem;
-    }
-
-    .current-work-image {
-        width: 120px;
-        height: 150px;
+    .current-work-items {
+        gap: 1.5rem;
     }
 
     .gradient-section {
         height: 150px;
+    }
+
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+
+    .footer-column h3 {
+        font-size: 1.125rem;
+    }
+
+    .footer-column h4 {
+        font-size: 0.9375rem;
+    }
+
+    .mission-content h2 {
+        font-size: 1.875rem;
+    }
+
+    .mission-content p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #020617;
+    color: #94a3b8;
+    padding: 3rem 0rem;
+    border-top: 3px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* Mission Section */
+.mission .container {
+    margin-bottom: 3rem;
+}
+
+.container-mission {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+}
+
+.mission-content {
+    color: var(--white);
+}
+
+.mission-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.mission-content .italic {
+    font-style: italic;
+}
+
+
+.mission-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.btn-work {
+    font-family: 'Instrument Sans', sans-serif;
+    padding: 1.5rem 0rem;
+    border: none;
+    background: transparent;
+    color: #e2e2e2;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn-work .link-arrow {
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.btn-work:hover .link-arrow {
+    transform: translateX(6px);
+}
+
+.btn-work-light {
+    color: #e2e2e2;
+}
+
+.btn-work-light .link-arrow {
+    color: #e2e2e2;
+}
+
+
+.btn-current-work {
+    font-family: 'Instrument Sans', sans-serif;
+    padding: 1.5rem 0rem;
+    border: none;
+    background: transparent;
+    color: #363636;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn-current-work .link-arrow {
+    color: #363636;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.btn-current-work:hover .link-arrow {
+    transform: translateX(6px);
+}
+
+.footer-rhs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: flex-start;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-rhs p {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.footer-column p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    color: inherit;
+    font-size: 0.875rem;
+}
+
+.footer-column a:hover {
+    color: inherit;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.fade-in-delay-1 {
+    animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.fade-in-delay-2 {
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fibonacci Project Specific Styles */
+.fibonacci-project .project-text {
+    text-align: left;
+}
+
+.fibonacci-project .project-text p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.fibonacci-media-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.fibonacci-static-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.fibonacci-image-wrapper,
+.fibonacci-pdf-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fibonacci-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fibonacci-pdf-wrapper {
+    position: relative;
+    background: white;
+}
+
+.pdf-preview {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.pdf-preview embed {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.pdf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.pdf-overlay span {
+    color: white;
+    font-size: 0.875rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pdf-preview:hover .pdf-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.pdf-preview:hover .pdf-overlay span {
+    opacity: 1;
+}
+
+/* Plus Button */
+.plus-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #666;
+    color: white;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 10;
+    margin-top: 0.5rem;
+}
+
+.plus-button:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+.plus-button.active {
+    transform: rotate(45deg);
+    background: #999;
+}
+
+/* Video Gallery */
+.fibonacci-video-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.fibonacci-video-gallery.active {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.fibonacci-video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fibonacci-video:hover {
+    filter: grayscale(0%);
+}
+
+/* Responsive adjustments for Fibonacci section */
+@media (max-width: 768px) {
+    .fibonacci-static-media {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .fibonacci-image-wrapper,
+    .fibonacci-pdf-wrapper {
+        height: 180px;
+    }
+
+    .fibonacci-video-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .fibonacci-video-gallery.active {
+        max-height: 600px;
+    }
+
+    .fibonacci-video {
+        height: 180px;
+    }
+
+    .plus-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .fibonacci-image-wrapper,
+    .fibonacci-pdf-wrapper {
+        height: 150px;
+    }
+
+    .fibonacci-video {
+        height: 150px;
+    }
+
+    .plus-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 }
