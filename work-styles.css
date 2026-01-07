@@ -167,7 +167,7 @@ h1, h2, h3 {
     height: auto;
     aspect-ratio: 3/4;
     background: linear-gradient(135deg, #8b7355 0%, #6b5d52 100%);
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
@@ -185,7 +185,13 @@ h1, h2, h3 {
     min-height: 98vh;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 }
+
+.project-item-section .wrap {
+    width: 100%;
+}
+
 
 .project-item {
     display: grid;
@@ -193,10 +199,6 @@ h1, h2, h3 {
     gap: 3rem;
     align-items: center;
     margin-bottom: 0;
-    padding: 0 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .project-text h2 {
@@ -241,7 +243,7 @@ h1, h2, h3 {
 .project-image-wrapper {
     width: 220px;
     height: 180px;
-    border-radius: 1rem;
+    border-radius: 0.25rem;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
@@ -304,13 +306,14 @@ h1, h2, h3 {
 /* Awards Section */
 .awards-section {
     background: var(--cream);
-    padding: 5rem 2rem;
+    padding: 5rem 0;
     margin-top: 3rem;
 }
 
 .awards-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .awards-content h2 {
@@ -351,18 +354,18 @@ h1, h2, h3 {
 }
 
 .award-org {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--text-dark);
     font-weight: 400;
 }
 
 .award-name {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--text-muted);
 }
 
 .award-year {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--text-muted);
     text-align: right;
 }
@@ -376,13 +379,14 @@ h1, h2, h3 {
 /* Current Work Section */
 .current-work-section {
     background: var(--navy);
-    padding: 5rem 2rem;
+    padding: 5rem 0;
     min-height: 0.5vh;
 }
 
 .current-work-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .current-work-content h2 {
@@ -426,7 +430,7 @@ h1, h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     overflow: hidden;
 }
 
@@ -435,7 +439,7 @@ h1, h2, h3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -572,7 +576,7 @@ main.wrap.content {
 .projects__image {
     width: 100%;
     height: auto;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
@@ -630,9 +634,8 @@ main.wrap.content {
     }
 
     .wrap,
-    .project-item,
-    .awards-section,
-    .current-work-section,
+    .awards-content,
+    .current-work-content,
     .mission-footer-section,
     .site-footer {
         padding-left: 1.25rem;
@@ -708,9 +711,21 @@ main.wrap.content {
         height: 150px;
     }
 
+    .project-images.single {
+        justify-content: center;
+    }
+
     .project-images.single .project-image-wrapper {
-        width: 240px;
-        height: 180px;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-images.single .project-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
 
@@ -790,9 +805,8 @@ main.wrap.content {
     }
 
     .wrap,
-    .project-item,
-    .awards-section,
-    .current-work-section,
+    .awards-content,
+    .current-work-content,
     .mission-footer-section,
     .site-footer {
         padding-left: 1rem;
@@ -837,9 +851,21 @@ main.wrap.content {
         height: 130px;
     }
 
+    .project-images.single {
+        justify-content: center;
+    }
+
     .project-images.single .project-image-wrapper {
-        width: 200px;
-        height: 160px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .project-images.single .project-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .current-work-content h2,
@@ -899,6 +925,7 @@ main.wrap.content {
 
 .mission-content {
     color: var(--white);
+    margin-bottom: 4rem;
 }
 
 .mission-content h2 {
@@ -910,6 +937,7 @@ main.wrap.content {
 
 .mission-content .italic {
     font-style: italic;
+
 }
 
 
@@ -917,7 +945,7 @@ main.wrap.content {
     font-size: 1rem;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
 }
 
 .btn-work {
@@ -1078,6 +1106,7 @@ main.wrap.content {
 
 .fibonacci-project .project-text {
     text-align: left;
+    max-width: 500px;
 }
 
 .fibonacci-project .project-text p {
@@ -1092,26 +1121,32 @@ main.wrap.content {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-end;
-    min-height: 400px;
 }
 
 .fibonacci-static-media {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 1rem;
     width: 100%;
     position: relative;
     z-index: 1;
+    align-items: flex-start;
 }
 
 .fibonacci-pdf-wrapper {
-    width: 100%;
+    height: 280px;
+    width: auto;
     aspect-ratio: 8.5 / 11;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     background: white;
+    flex-shrink: 0;
+}
+
+.fibonacci-pdf-wrapper:nth-child(2) {
+    aspect-ratio: 11 / 8.5;
+    height: 280px;
 }
 
 .pdf-preview {
@@ -1124,8 +1159,13 @@ main.wrap.content {
 
 .pdf-preview embed {
     width: 100%;
-    height: 100%;
+    height: calc(100% + 40px);
     pointer-events: none;
+    margin-top: -40px;
+}
+
+.pdf-preview embed::-webkit-pdf-viewer-toolbar {
+    display: none;
 }
 
 .pdf-overlay {
@@ -1172,9 +1212,9 @@ main.wrap.content {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: absolute;
-    bottom: 1rem;
-    right: 0;
+    position: relative;
+    margin-top: 1rem;
+    align-self: flex-end;
     z-index: 100;
 }
 
@@ -1232,7 +1272,7 @@ main.wrap.content {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 0.5rem;
+    border-radius: 0.25rem;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
     cursor: pointer;
@@ -1258,12 +1298,25 @@ main.wrap.content {
 
 @media (max-width: 768px) {
     .fibonacci-media-container {
-        min-height: 600px;
+        align-items: center;
     }
 
     .fibonacci-static-media {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 1rem;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .fibonacci-pdf-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 11 / 8.5;
+    }
+
+    .fibonacci-pdf-wrapper:nth-child(2) {
+        aspect-ratio: 11 / 8.5;
+        height: auto;
     }
 
     .fibonacci-video-gallery {
@@ -1279,12 +1332,27 @@ main.wrap.content {
         width: 45px;
         height: 45px;
         font-size: 1.75rem;
+        align-self: center;
     }
 }
 
 @media (max-width: 480px) {
     .fibonacci-media-container {
-        min-height: 500px;
+        align-items: center;
+    }
+
+    .fibonacci-static-media {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .fibonacci-pdf-wrapper {
+        width: 100%;
+        height: auto;
+    }
+
+    .fibonacci-pdf-wrapper:nth-child(2) {
+        height: auto;
     }
 
     .fibonacci-video-gallery {
@@ -1295,5 +1363,6 @@ main.wrap.content {
         width: 40px;
         height: 40px;
         font-size: 1.5rem;
+        align-self: center;
     }
 }
