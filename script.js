@@ -30,7 +30,7 @@ if (emailButton) {
         const email = 'mb1223@ic.ac.uk';
         try {
             await navigator.clipboard.writeText(email);
-            showToast('Email copied to clipboard!');
+            showToast('Email copied to clipboard');
         } catch (err) {
             console.error('Failed to copy email:', err);
             showToast('Failed to copy email', true);
