@@ -331,7 +331,6 @@ h1, h2, h3 {
 .awards-divider {
     height: 1px;
     background: rgba(0, 0, 0, 0.15);
-    margin-bottom: 2rem;
 }
 
 .awards-list {
@@ -1059,10 +1058,11 @@ main.wrap.content {
 .footer-column a {
     color: inherit;
     font-size: 0.875rem;
+    transition: color 0.3s ease;
 }
 
 .footer-column a:hover {
-    color: inherit;
+    color: #cacaca;
 }
 
 .footer-bottom {
