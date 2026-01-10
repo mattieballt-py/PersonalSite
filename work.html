@@ -41,16 +41,43 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <main id="main">
+    <!-- Current Work Section -->
+    <section class="current-work-section" id="current-work">
+      <div class="current-work-content">
+        <a href="index.html" class="back-home">← Back Home</a>
+        <h1>Current Work</h1>
+        <div class="current-work-items">
+          <div class="current-work-item hover-item">
+            <a href="https://fibonaccihq.com" target="_blank" class="item-image">
+              <img src="images/fibonaccimockup.jpg" alt="Fibonacci HQ" />
+            </a>
+            <p class="item-text">Website design for yachting brands</p>
+          </div>
+          <div class="current-work-item hover-item">
+            <a href="https://hackathonq.com" target="_blank" class="item-image">
+              <img src="images/hackathonq.jpg" alt="Hackathon Q" />
+            </a>
+            <p class="item-text">Hackathon Q organising events across Europe</p>
+          </div>
+          <div class="current-work-item hover-item">
+            <div class="item-image-no-link">
+              <img src="images/turtle.jpg" alt="Robotic Sea Turtle" />
+            </div>
+            <p class="item-text">Robotic Sea Turtle engineering project</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Selected Work Section matching the design -->
     <section class="selected-work-section">
       <div class="wrap">
-        <a href="index.html" class="back-home">← Back Home</a>
         <div class="selected-work-header">
           <div class="selected-work-text">
-            <h1>Selected Work</h1>
+            <h2>Selected Work</h2>
             <p>I work on projects in an effort to make a tangible difference to the world.
 Pursuing my interests, but also where I can make an impact.</p>
-            <a href="#current-work" class="btn-current-work" id="current-work-button">Currently working on<span class="link-arrow">→</span></a>
+            <!--<a href="#current-work" class="btn-current-work" id="current-work-button">Currently working on<span class="link-arrow">→</span></a>-->
           </div>
           <div class="selected-work-image">
             <img src="images/mattie_podium.png" alt="Mattie Ball" />
@@ -64,11 +91,23 @@ Pursuing my interests, but also where I can make an impact.</p>
         <div class="project-item fibonacci-project">
           <div class="project-text">
             <h2><a href="https://www.fibonaccihq.com/">Fibonacci</a> (2018-2022)</h2>
-            <p>Marketing using engineering to generate quantifiable value</p>
-
+            <p class="fibonacci-description">Marketing using engineering to generate quantifiable value</p>
           </div>
           <div class="fibonacci-media-container">
-            <div class="fibonacci-static-media">
+            <!-- Default: Videos visible -->
+            <div class="fibonacci-video-gallery" id="fibonacci-video-gallery">
+              <video class="fibonacci-video" loop muted playsinline>
+                <source src="images/U-mask animation sea of blocks final! (attempt 16) (1) (yafw small_file).mp4" type="video/mp4">
+              </video>
+              <video class="fibonacci-video" loop muted playsinline>
+                <source src="images/easy composites animation (1) (yafw small_file).mov" type="video/mp4">
+              </video>
+              <video class="fibonacci-video" loop muted playsinline>
+                <source src="images/paul roggers forcefield animation 10001-0565 (yafw very_small_file).mp4" type="video/mp4">
+              </video>
+            </div>
+            <!-- Hidden by default: PDFs -->
+            <div class="fibonacci-static-media" id="fibonacci-static-media">
               <div class="fibonacci-pdf-wrapper">
                 <a href="images/Fibonacci Brand Guide PRINT.pdf" download class="pdf-preview">
                   <embed src="images/Fibonacci Brand Guide PRINT.pdf#page=1" type="application/pdf" />
@@ -88,22 +127,8 @@ Pursuing my interests, but also where I can make an impact.</p>
                 </a>
               </div>
             </div>
-            <button class="plus-button" id="fibonacci-plus-btn" aria-label="Toggle video gallery">+</button>
+            <button class="plus-button" id="fibonacci-plus-btn" aria-label="Toggle PDFs">+</button>
           </div>
-        </div>
-      </div>
-      <!-- Fibonacci Video Overlay -->
-      <div class="fibonacci-video-overlay" id="fibonacci-video-overlay">
-        <div class="fibonacci-video-gallery" id="fibonacci-video-gallery">
-          <video class="fibonacci-video" loop muted playsinline>
-            <source src="images/U-mask animation sea of blocks final! (attempt 16) (1) (yafw small_file).mp4" type="video/mp4">
-          </video>
-          <video class="fibonacci-video" loop muted playsinline>
-            <source src="images/easy composites animation (1) (yafw small_file).mov" type="video/mp4">
-          </video>
-          <video class="fibonacci-video" loop muted playsinline>
-            <source src="images/paul roggers forcefield animation 10001-0565 (yafw very_small_file).mp4" type="video/mp4">
-          </video>
         </div>
       </div>
     </section>
@@ -128,8 +153,11 @@ Pursuing my interests, but also where I can make an impact.</p>
       </div>
     </section>
 
+    <!-- Gradient Transition -->
+    <div class="gradient-section"></div>
+
     <!-- Awards Section -->
-    <section class="awards-section">
+    <section class="current-work-section awards-section-dark">
       <div class="awards-content">
         <h2>Awards</h2>
         <p class="subtitle">Proud of them all</p>
@@ -169,36 +197,6 @@ Pursuing my interests, but also where I can make an impact.</p>
             <div class="award-org"><a href="https://ukmt.org.uk/" target="blank"> UK Maths Trust (UKMT) </a></div>
             <div class="award-name">Gold Award Yearly Maths Olympiad</div>
             <div class="award-year">2016-2022</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gradient Transition -->
-    <div class="gradient-section"></div>
-
-    <!-- Current Work Section -->
-    <section class="current-work-section" id="current-work">
-      <div class="current-work-content">
-        <h2>Current Work</h2>
-        <div class="current-work-items">
-          <div class="current-work-item hover-item">
-            <p class="item-text">Website design for yachting brands</p>
-            <a href="https://fibonaccihq.com" target="_blank" class="item-image">
-              <img src="images/fibonaccimockup.jpg" alt="Fibonacci HQ" />
-            </a>
-          </div>
-          <div class="current-work-item hover-item">
-            <p class="item-text">Hackathon Q organising events across Europe</p>
-            <a href="https://hackathonq.com" target="_blank" class="item-image">
-              <img src="images/hackathonq.jpg" alt="Hackathon Q" />
-            </a>
-          </div>
-          <div class="current-work-item hover-item">
-            <p class="item-text">Robotic Sea Turtle engineering project</p>
-            <div class="item-image-no-link">
-              <img src="images/turtle.jpg" alt="Robotic Sea Turtle" />
-            </div>
           </div>
         </div>
       </div>
@@ -254,45 +252,45 @@ Pursuing my interests, but also where I can make an impact.</p>
   </main>
 
   <script>
-    // Fibonacci video gallery toggle
+    // Fibonacci PDFs/Videos toggle
     const plusBtn = document.getElementById('fibonacci-plus-btn');
-    const videoOverlay = document.getElementById('fibonacci-video-overlay');
     const videoGallery = document.getElementById('fibonacci-video-gallery');
+    const staticMedia = document.getElementById('fibonacci-static-media');
+    const fibDescription = document.querySelector('.fibonacci-description');
+    const fibProject = document.querySelector('.fibonacci-project');
     const videos = document.querySelectorAll('.fibonacci-video');
-    let galleryOpen = false;
+    let showingPDFs = false;
 
     plusBtn.addEventListener('click', () => {
-      galleryOpen = !galleryOpen;
-      videoOverlay.classList.toggle('active', galleryOpen);
-      videoGallery.classList.toggle('active', galleryOpen);
-      plusBtn.classList.toggle('active', galleryOpen);
+      showingPDFs = !showingPDFs;
 
-      if (!galleryOpen) {
+      if (showingPDFs) {
+        // Show PDFs, hide videos, show description
+        videoGallery.classList.add('hidden');
+        staticMedia.classList.add('active');
+        fibDescription.classList.add('visible');
+        plusBtn.classList.add('active');
+        fibProject.classList.add('showing-pdfs');
+
+        // Pause all videos
         videos.forEach(video => {
           video.pause();
           video.currentTime = 0;
         });
-      }
-    });
-
-    // Close overlay when clicking outside videos
-    videoOverlay.addEventListener('click', (e) => {
-      if (e.target === videoOverlay) {
-        galleryOpen = false;
-        videoOverlay.classList.remove('active');
-        videoGallery.classList.remove('active');
+      } else {
+        // Show videos, hide PDFs, hide description
+        videoGallery.classList.remove('hidden');
+        staticMedia.classList.remove('active');
+        fibDescription.classList.remove('visible');
         plusBtn.classList.remove('active');
-        videos.forEach(video => {
-          video.pause();
-          video.currentTime = 0;
-        });
+        fibProject.classList.remove('showing-pdfs');
       }
     });
 
-    // Video hover effects
+    // Video hover effects - play on hover
     videos.forEach(video => {
       video.addEventListener('mouseenter', () => {
-        if (galleryOpen) {
+        if (!showingPDFs) {
           video.play();
         }
       });

@@ -132,6 +132,10 @@ h1, h2, h3 {
     align-items: center;
 }
 
+.selected-work-section .wrap {
+    width: 100%;
+}
+
 .selected-work-header {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -140,7 +144,8 @@ h1, h2, h3 {
     margin-bottom: 0;
 }
 
-.selected-work-text h1 {
+.selected-work-text h1,
+.selected-work-text h2 {
     font-size: 3.5rem;
     margin-bottom: 2rem;
     line-height: 1.2;
@@ -262,8 +267,8 @@ h1, h2, h3 {
 
 .project-images.single .project-image-wrapper {
     position: relative;
-    width: 280px;
-    height: 200px;
+    width: 350px;
+    height: 250px;
 }
 
 /* Digital Scanning Image Hover Effect */
@@ -320,17 +325,18 @@ h1, h2, h3 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     font-weight: 400;
+    color: var(--white);
 }
 
 .awards-content .subtitle {
     font-size: 0.95rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 2.5rem;
 }
 
 .awards-divider {
     height: 1px;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .awards-list {
@@ -344,7 +350,7 @@ h1, h2, h3 {
     grid-template-columns: 1.5fr 3fr 0.75fr;
     gap: 3rem;
     padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     align-items: start;
 }
 
@@ -354,18 +360,18 @@ h1, h2, h3 {
 
 .award-org {
     font-size: 1rem;
-    color: var(--text-dark);
+    color: var(--white);
     font-weight: 400;
 }
 
 .award-name {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .award-year {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.8);
     text-align: right;
 }
 
@@ -377,9 +383,13 @@ h1, h2, h3 {
 
 /* Current Work Section */
 .current-work-section {
-    background: var(--navy);
+    background: var(--cream);
     padding: 5rem 0;
     min-height: 0.5vh;
+}
+
+.current-work-section.awards-section-dark {
+    background: var(--navy);
 }
 
 .current-work-content {
@@ -388,11 +398,18 @@ h1, h2, h3 {
     padding: 0 2rem;
 }
 
+.current-work-content .back-home {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.current-work-content h1,
 .current-work-content h2 {
     font-size: 2.75rem;
     margin-bottom: 3rem;
     font-weight: 400;
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 .current-work-items {
@@ -402,35 +419,21 @@ h1, h2, h3 {
 }
 
 .current-work-item {
-    position: relative;
-    min-height: 200px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-}
-
-.current-work-item .item-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    transition: opacity 0.3s ease;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .current-work-item .item-image,
 .current-work-item .item-image-no-link {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0.25rem;
     overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .current-work-item .item-image img,
@@ -439,22 +442,33 @@ h1, h2, h3 {
     height: 100%;
     object-fit: cover;
     border-radius: 0.25rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.current-work-item .item-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: left;
+}
+
+.current-work-item.hover-item:hover .item-image img,
+.current-work-item.hover-item:hover .item-image-no-link img {
+    filter: grayscale(0%);
 }
 
 .current-work-item.hover-item:hover .item-text {
-    opacity: 0;
-}
-
-.current-work-item.hover-item:hover .item-image,
-.current-work-item.hover-item:hover .item-image-no-link {
     opacity: 1;
 }
 
 /* Mission Footer Section */
 .mission-footer-section {
     background: var(--navy);
-    padding: 4rem 2rem 3rem;
+    padding: 4rem 0rem;
     border-top: 2px dashed rgba(255, 255, 255, 0.25);
 }
 
@@ -498,7 +512,7 @@ h1, h2, h3 {
 /* Site Footer */
 .site-footer {
     background: var(--navy-dark);
-    padding: 3rem 2rem;
+    padding: 3rem 0rem;
 }
 
 .footer-grid {
@@ -617,6 +631,8 @@ main.wrap.content {
     }
 
     .selected-work-text h1,
+    .selected-work-text h2,
+    .current-work-content h1,
     .current-work-content h2,
     .mission-text h2 {
         font-size: 2.5rem;
@@ -660,7 +676,8 @@ main.wrap.content {
         max-width: 240px;
     }
 
-    .selected-work-text h1 {
+    .selected-work-text h1,
+    .selected-work-text h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
     }
@@ -740,10 +757,16 @@ main.wrap.content {
 
     .current-work-items {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
         text-align: left;
     }
 
+    .current-work-item .item-image,
+    .current-work-item .item-image-no-link {
+        height: 250px;
+    }
+
+    .current-work-content h1,
     .current-work-content h2,
     .mission-text h2 {
         font-size: 2.25rem;
@@ -816,7 +839,8 @@ main.wrap.content {
         padding: 2rem 0;
     }
 
-    .selected-work-text h1 {
+    .selected-work-text h1,
+    .selected-work-text h2 {
         font-size: 2rem;
     }
 
@@ -867,13 +891,19 @@ main.wrap.content {
         object-fit: cover;
     }
 
+    .current-work-content h1,
     .current-work-content h2,
     .mission-text h2 {
         font-size: 1.875rem;
     }
 
     .current-work-items {
-        gap: 1.5rem;
+        gap: 2.5rem;
+    }
+
+    .current-work-item .item-image,
+    .current-work-item .item-image-no-link {
+        height: 220px;
     }
 
     .gradient-section {
@@ -919,7 +949,7 @@ main.wrap.content {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
     align-items: flex-start;
-    padding: 0 1rem;
+    padding: 0 0rem;
 }
 
 .mission-content {
@@ -1018,7 +1048,6 @@ main.wrap.content {
 
 .footer-rhs p {
     font-size: 0.875rem;
-    margin-bottom: 0.5rem;
 }
 
 .footer-content {
@@ -1026,7 +1055,7 @@ main.wrap.content {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin-bottom: 2rem;
-    padding: 0 1rem;
+    padding: 0 0rem;
 }
 
 .footer-column h3 {
@@ -1102,17 +1131,53 @@ main.wrap.content {
 /* Fibonacci Project Specific Styles */
 .fibonacci-section {
     position: relative;
+    align-items: flex-start !important;
+}
+
+.fibonacci-project {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.fibonacci-project.showing-pdfs {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
 }
 
 .fibonacci-project .project-text {
     text-align: left;
     max-width: 500px;
+    margin-bottom: 0rem;
 }
 
-.fibonacci-project .project-text p {
+.fibonacci-project .project-text h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.fibonacci-project .project-text h2 a {
+    text-align: left;
+}
+
+.fibonacci-project .project-text .fibonacci-description {
     font-size: 1rem;
     color: var(--text-muted);
     margin-top: 0.5rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    text-align: left;
+}
+
+.fibonacci-project .project-text .fibonacci-description.visible {
+    opacity: 1;
+    max-height: 100px;
 }
 
 .fibonacci-media-container {
@@ -1121,6 +1186,7 @@ main.wrap.content {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-end;
+    width: 100%;
 }
 
 .fibonacci-static-media {
@@ -1130,10 +1196,22 @@ main.wrap.content {
     position: relative;
     z-index: 1;
     align-items: flex-start;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fibonacci-static-media.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
 }
 
 .fibonacci-pdf-wrapper {
-    height: 280px;
+    height: 250px;
     width: auto;
     aspect-ratio: 8.5 / 11;
     border-radius: 0.25rem;
@@ -1146,7 +1224,7 @@ main.wrap.content {
 
 .fibonacci-pdf-wrapper:nth-child(2) {
     aspect-ratio: 11 / 8.5;
-    height: 280px;
+    height: 250px;
 }
 
 .pdf-preview {
@@ -1228,55 +1306,29 @@ main.wrap.content {
     background: #999;
 }
 
-/* Video Gallery Overlay */
-.fibonacci-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--cream);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-}
-
-.fibonacci-video-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 /* Video Gallery */
 .fibonacci-video-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: 1400px;
     width: 100%;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 1;
+    transition: opacity 0.4s ease;
 }
 
-.fibonacci-video-gallery.active {
-    opacity: 1;
-    transform: scale(1);
+.fibonacci-video-gallery.hidden {
+    display: none;
 }
 
 .fibonacci-video {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 200px;
     object-fit: cover;
     border-radius: 0.25rem;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .fibonacci-video:hover {
@@ -1285,18 +1337,31 @@ main.wrap.content {
 
 /* Responsive adjustments for Fibonacci section */
 @media (max-width: 1024px) {
-    .fibonacci-video-gallery {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 600px;
+    .fibonacci-project.showing-pdfs {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 
-    .fibonacci-video-overlay {
-        padding: 1.5rem;
+    .fibonacci-video-gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .fibonacci-video {
+        height: 200px;
+    }
+
+    .fibonacci-project .project-text h2 {
+        font-size: 2.25rem;
     }
 }
 
 @media (max-width: 768px) {
+    .fibonacci-project.showing-pdfs {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
     .fibonacci-media-container {
         align-items: center;
     }
@@ -1321,11 +1386,15 @@ main.wrap.content {
 
     .fibonacci-video-gallery {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 3rem;
     }
 
-    .fibonacci-video-overlay {
-        padding: 1rem;
+    .fibonacci-video {
+        height: 250px;
+    }
+
+    .fibonacci-project .project-text h2 {
+        font-size: 2rem;
     }
 
     .plus-button {
@@ -1356,7 +1425,15 @@ main.wrap.content {
     }
 
     .fibonacci-video-gallery {
-        gap: 1rem;
+        gap: 2.5rem;
+    }
+
+    .fibonacci-video {
+        height: 220px;
+    }
+
+    .fibonacci-project .project-text h2 {
+        font-size: 1.75rem;
     }
 
     .plus-button {
