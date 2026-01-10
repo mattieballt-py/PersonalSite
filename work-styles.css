@@ -1128,6 +1128,13 @@ main.wrap.content {
     }
 }
 
+/* Digital Scanning Section Spacing */
+@media (max-width: 1024px) {
+    .digital-scanning-section {
+        padding-top: 8rem !important;
+    }
+}
+
 /* Fibonacci Project Specific Styles */
 .fibonacci-section {
     position: relative;
@@ -1139,6 +1146,7 @@ main.wrap.content {
     flex-direction: column;
     gap: 2rem;
     align-items: flex-start;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fibonacci-project.showing-pdfs {
@@ -1152,6 +1160,7 @@ main.wrap.content {
     text-align: left;
     max-width: 500px;
     margin-bottom: 0rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fibonacci-project .project-text h2 {
@@ -1171,13 +1180,15 @@ main.wrap.content {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: left;
+    transform: translateY(-10px);
 }
 
 .fibonacci-project .project-text .fibonacci-description.visible {
     opacity: 1;
     max-height: 100px;
+    transform: translateY(0);
 }
 
 .fibonacci-media-container {
@@ -1187,6 +1198,7 @@ main.wrap.content {
     gap: 1rem;
     align-items: flex-end;
     width: 100%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fibonacci-static-media {
@@ -1202,12 +1214,15 @@ main.wrap.content {
     position: absolute;
     top: 0;
     left: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
 }
 
 .fibonacci-static-media.active {
     opacity: 1;
     pointer-events: auto;
     position: relative;
+    transform: translateY(0);
 }
 
 .fibonacci-pdf-wrapper {
@@ -1313,11 +1328,16 @@ main.wrap.content {
     gap: 2rem;
     width: 100%;
     opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
 }
 
 .fibonacci-video-gallery.hidden {
-    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
 }
 
 .fibonacci-video {
