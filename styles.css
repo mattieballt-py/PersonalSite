@@ -406,13 +406,13 @@ h1, h2, h3 {
 .video-container {
     width: 100%;
     max-width: 280px;
-    height: auto;
     aspect-ratio: 3/4;
     border-radius: 0.25rem;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
     cursor: pointer;
+    position: relative;
 }
 
 .video-container:hover {

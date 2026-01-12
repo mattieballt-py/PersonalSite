@@ -1376,6 +1376,7 @@ main.wrap.content {
     transition: filter 0.3s ease;
     cursor: pointer;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 .fibonacci-video-item.hover-item:hover .fibonacci-video {
@@ -1403,8 +1404,14 @@ main.wrap.content {
     }
 
     .fibonacci-video-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    .fibonacci-video-item:nth-child(3) {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        margin: 0 auto;
     }
 
     .fibonacci-video {
@@ -1417,6 +1424,11 @@ main.wrap.content {
 }
 
 @media (max-width: 768px) {
+    .fibonacci-section {
+        min-height: 150vh;
+        padding: 4rem 0;
+    }
+
     .fibonacci-project.showing-pdfs {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1449,6 +1461,11 @@ main.wrap.content {
         gap: 3rem;
     }
 
+    .fibonacci-video-item:nth-child(3) {
+        grid-column: auto;
+        max-width: 100%;
+    }
+
     .fibonacci-video {
         height: 250px;
     }
@@ -1466,6 +1483,11 @@ main.wrap.content {
 }
 
 @media (max-width: 480px) {
+    .fibonacci-section {
+        min-height: 160vh;
+        padding: 3rem 0;
+    }
+
     .fibonacci-media-container {
         align-items: center;
     }
