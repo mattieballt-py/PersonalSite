@@ -1,0 +1,687 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* CSS Variables */
+:root {
+    --navy: #0D1B47;
+    --navy-dark: #0a1435;
+    --blue-medium: #1F43AD;
+    --tan: #F2C9A8;
+    --cream: #f5f1ea;
+    --white: #ffffff;
+    --text-dark: #1e293b;
+    --text-muted: #666;
+}
+
+/* Base Typography */
+body {
+    font-family: 'Instrument Sans', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--cream);
+    overflow-x: hidden;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Container */
+.wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+/* Skip Link */
+.skip {
+    position: absolute;
+    left: -9999px;
+}
+
+.skip:focus {
+    left: 0;
+    top: 0;
+    background: var(--navy);
+    color: white;
+    padding: 1rem;
+    z-index: 200;
+}
+
+/* Back Home Link */
+.back-home {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 3rem;
+    transition: color 0.3s ease;
+    margin-left: -1rem;
+}
+
+.back-home:hover {
+    color: var(--white);
+}
+
+/* Hero Section - Navy Background */
+.websites-hero {
+    min-height: 98vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.hero-content-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text {
+    color: var(--white);
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+.hero-subheadline {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+}
+
+.hero-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Transitions (matching index.html) */
+.gradient-transition {
+    height: 20vh;
+    background: linear-gradient(180deg, #0D1B47 0%, #1F43AD 25%, #F2C9A8 50%, #f5f1ea 100%);
+}
+
+.gradient-transition-reverse {
+    height: 20vh;
+    background: linear-gradient(180deg, #f5f1ea 0%, #F2C9A8 50%, #1F43AD 75%, #0D1B47 100%);
+}
+
+/* Portfolio Section - White Background with Staggered Cards */
+.portfolio-section {
+    background: var(--cream);
+    padding: 10rem 0 12rem 0;
+    min-height: auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 450px));
+    gap: 6rem 5rem;
+    max-width: 100%;
+    justify-content: center;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+    display: block;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: transform 0.3s ease, opacity 0.6s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.portfolio-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-card:nth-child(2n) {
+    margin-top: 5rem;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+}
+
+.portfolio-card.visible:hover {
+    transform: translateY(-8px);
+}
+
+.card-image {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    background: #f5f1ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.card-image img,
+.card-image video {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.portfolio-card:hover .card-image img,
+.portfolio-card:hover .card-image video {
+    filter: grayscale(0%);
+}
+
+/* Circular Arrow - Bottom Right */
+.card-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.portfolio-card:hover .card-arrow {
+    background: var(--navy);
+    transform: scale(1.1);
+}
+
+.portfolio-card:hover .card-arrow .arrow-icon {
+    transform: rotate(-45deg);
+    color: var(--white);
+}
+
+/* Card Text */
+.portfolio-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.portfolio-card p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 90%;
+}
+
+/* Praise Section - Navy Background */
+.praise-section {
+    background: var(--navy);
+    padding: 8rem 0 10rem 0;
+    color: var(--white);
+    position: relative;
+}
+
+.praise-section .section-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    color: var(--white);
+}
+
+.praise-subtitle {
+    font-size: 1.375rem;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+}
+
+.praise-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 2rem;
+}
+
+/* Praise List */
+.praise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 2rem;
+}
+
+.praise-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    align-items: start;
+}
+
+.praise-item:last-child {
+    border-bottom: none;
+}
+
+.praise-quote {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.praise-author {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: right;
+}
+
+.praise-author a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.praise-author a:hover {
+    color: var(--white);
+}
+
+/* Disclaimer */
+.disclaimer {
+    text-align: right;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2rem;
+    font-style: italic;
+    max-width: 100%;
+}
+
+/* Fade-in Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in-delay-1 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.2s forwards;
+}
+
+.fade-in-delay-2 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.4s forwards;
+}
+
+.fade-in-delay-3 {
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.6s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Styles */
+.btn-work {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-work-light {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-work:hover {
+    opacity: 0.7;
+}
+
+.link-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-work:hover .link-arrow {
+    transform: translateX(4px);
+}
+
+/* Footer Styles (matching index.html exactly) */
+.footer {
+    background: #020617;
+    color: #94a3b8;
+    padding: 3rem 0rem;
+    border-top: 3px dashed rgba(255, 255, 255, 0.3);
+}
+
+.mission .container {
+    margin-bottom: 3rem;
+}
+
+.container-mission {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0 1rem;
+}
+
+.mission-content {
+    color: var(--white);
+    margin-bottom: 4rem;
+}
+
+.mission-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--white);
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+}
+
+.mission-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0rem;
+}
+
+.mission-content .btn-work {
+    margin-top: 1.5rem;
+}
+
+.footer-rhs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: flex-start;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-rhs p {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.footer-column p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.footer-column ul li a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    padding: 2.5rem 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .portfolio-grid {
+        gap: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrap,
+    .container {
+        padding: 0 2rem;
+    }
+
+    .websites-hero {
+        min-height: 70vh;
+        padding: 3rem 0;
+    }
+
+    .hero-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-image-wrapper {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper img {
+        max-width: 300px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1rem;
+    }
+
+    .back-home {
+        margin-left: 0;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .portfolio-card:nth-child(2n) {
+        margin-top: 0;
+    }
+
+    .praise-section .section-title {
+        font-size: 2.25rem;
+    }
+
+    .praise-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .praise-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .praise-author {
+        text-align: left;
+    }
+
+    .footer {
+        padding: 3rem 0 0 0;
+    }
+
+    .container-mission {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-rhs {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .mission-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .mission-content p {
+        font-size: 0.9375rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image-wrapper img {
+        max-width: 100%;
+    }
+
+    .portfolio-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .arrow-icon {
+        font-size: 1.25rem;
+    }
+
+    .praise-section .section-title {
+        font-size: 2rem;
+    }
+
+    .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .footer {
+        padding: 2rem 0 0 0;
+    }
+
+    .footer-column h3 {
+        font-size: 1.125rem;
+    }
+
+    .footer-column h4 {
+        font-size: 0.75rem;
+    }
+
+    .mission-content h2 {
+        font-size: 1.875rem;
+    }
+
+    .mission-content p {
+        font-size: 0.875rem;
+    }
+}

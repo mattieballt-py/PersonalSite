@@ -27,7 +27,7 @@ document.querySelectorAll('section').forEach(section => {
 const emailButton = document.getElementById('email-button');
 if (emailButton) {
     emailButton.addEventListener('click', async function() {
-        const email = 'mb1223@ic.ac.uk';
+        const email = 'mattie@fibonaccihq.com';
         try {
             await navigator.clipboard.writeText(email);
             showToast('Email copied to clipboard');
