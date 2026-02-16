@@ -351,6 +351,24 @@ Pursuing my interests, but also where I can make an impact.</p>
       });
     });
 
+    // Current Work videos - play on hover
+    const currentWorkItems = document.querySelectorAll('.current-work-item');
+    currentWorkItems.forEach(item => {
+      const video = item.querySelector('video');
+      if (video) {
+        video.pause(); // Ensure video starts paused
+
+        item.addEventListener('mouseenter', () => {
+          video.play();
+        });
+
+        item.addEventListener('mouseleave', () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+    });
+
     // Smooth scroll for "Currently working on" button
     document.getElementById('current-work-button')?.addEventListener('click', (e) => {
       e.preventDefault();
