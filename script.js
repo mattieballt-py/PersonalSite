@@ -23,18 +23,11 @@ document.querySelectorAll('section').forEach(section => {
     }
 });
 
-// Email button - copy to clipboard
-const emailButton = document.getElementById('email-button');
-if (emailButton) {
-    emailButton.addEventListener('click', async function() {
-        const email = 'mattie@fibonaccihq.com';
-        try {
-            await navigator.clipboard.writeText(email);
-            showToast('Email copied to clipboard');
-        } catch (err) {
-            console.error('Failed to copy email:', err);
-            showToast('Failed to copy email', true);
-        }
+// Websites button - navigate to websites page
+const websitesButton = document.getElementById('websites-button');
+if (websitesButton) {
+    websitesButton.addEventListener('click', function() {
+        window.location.href = 'websites.html';
     });
 }
 

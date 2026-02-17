@@ -195,4 +195,38 @@ if (emailSecondary) {
     emailSecondary.addEventListener('click', () => trackCTAClick('Copy Email Address'));
 }
 
+// Email button - copy to clipboard
+const emailButtonWebsites = document.getElementById('email-button-websites');
+if (emailButtonWebsites) {
+    emailButtonWebsites.addEventListener('click', async function() {
+        const email = 'mattie@fibonaccihq.com';
+        try {
+            await navigator.clipboard.writeText(email);
+            showToast('Email copied to clipboard');
+        } catch (err) {
+            console.error('Failed to copy email:', err);
+            showToast('Failed to copy email', true);
+        }
+    });
+}
+
+// Toast notification function
+function showToast(message, isError = false) {
+    const toast = document.createElement('div');
+    toast.className = 'toast' + (isError ? ' toast-error' : '');
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('toast-show');
+    }, 10);
+
+    setTimeout(() => {
+        toast.classList.remove('toast-show');
+        setTimeout(() => {
+            toast.remove();
+        }, 300);
+    }, 2500);
+}
+
 console.log('Websites page loaded successfully');
