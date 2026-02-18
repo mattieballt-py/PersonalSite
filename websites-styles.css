@@ -639,7 +639,7 @@ h1, h2, h3 {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 6rem;
     }
 
     .portfolio-card:nth-child(2n) {
