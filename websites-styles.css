@@ -325,18 +325,25 @@ h1, h2, h3 {
 
 .praise-author {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
     text-align: right;
 }
 
-.praise-author a {
+.praise-name {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.praise-company {
     color: rgba(255, 255, 255, 0.9);
+}
+
+.praise-author a {
+    color: rgba(255, 255, 255, 0.5);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .praise-author a:hover {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Disclaimer */
@@ -588,6 +595,13 @@ h1, h2, h3 {
 
 .footer-bottom p {
     margin: 0;
+}
+
+/* FAQ + footer guttering matches home page (1200px / 0 2rem) */
+.faq-section .container,
+.footer .container {
+    max-width: 1200px;
+    padding: 0 2rem;
 }
 
 /* Responsive Design */
