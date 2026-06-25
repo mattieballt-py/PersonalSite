@@ -149,7 +149,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const fibhqButton = document.getElementById('fibhq-button');
 if (fibhqButton) {
     fibhqButton.addEventListener('click', function() {
-        window.open('https://www.fibonaccihq.com/insights', '_blank');
+        window.open('https://www.fibonaccihq.com/case-studies', '_blank');
     });
 }
 
